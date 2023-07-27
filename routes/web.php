@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 // use location
 /*
@@ -12,9 +12,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/get-latest-location', 'LocationController@getLatestLocation');
 Route::get('/', function () {
-    return view('user view/useraa');
-});
+    return view('home');}); 
 
 
+Route::get('/user', [userController::class, 'index'])->name('user');
+Route::get('/home', [homeController::class, 'index'])->name('home');

@@ -7,7 +7,7 @@ body {
     float: left;
     width: 300px;
     height: 100vh;
-    background: #f2f2ee;
+    background: #e6e6c5;
     overflow-y: auto;
 }
 
@@ -18,7 +18,7 @@ body {
 }
 
 #title {
-    text-align: center;
+    text-align: left;
     margin: 10px 0;
 }
 
@@ -49,10 +49,27 @@ body {
     margin: auto;
 }
 .logo {
-    width: 150px; /* Atur lebar gambar logo */
+    width: 200px; /* Atur lebar gambar logo */
     height: auto; /* Biarkan tinggi mengikuti proporsi asli gambar */
-    margin-top: 15px; /* Mengatur jarak 20 piksel dari atas */
+    margin-top: 30px; /* Mengatur jarak 20 piksel dari atas */
   margin-bottom: 15px; /* Mengatur jarak 10 piksel dari bawah */
-  margin-left: 70px; /* Mengatur jarak 30 piksel dari kiri */
-  margin-right: 30px; /* Mengatur jarak 40 piksel dari kanan */
+  margin-left: 25px; /* Mengatur jarak 30 piksel dari kiri */
+  margin-right: 60px; /* Mengatur jarak 40 piksel dari kanan */
 }
+
+/* CSS class untuk mengatur ukuran ikon marker bipol*/
+/* .icon-marker {
+    width: 32px; /* Ubah sesuai dengan ukuran yang diinginkan */
+    /* height: 32px; /* Ubah sesuai dengan ukuran yang diinginkan */
+  /* }  */
+
+.myloc{
+ width: 20px;
+
+}
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+  }

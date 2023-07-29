@@ -11,6 +11,7 @@ body {
     overflow-y: auto;
 }
 
+
 #map {
     float: left;
     width: calc(100% - 300px);
@@ -67,9 +68,67 @@ body {
  width: 20px;
 
 }
-button {
+
+.button {
     display: flex;
     align-items: center;
     justify-content: center;
    
   }
+
+  /* ------------------------userbk(style) -----------------------------*/
+  #sidebar {
+    float: left;
+    width: 300px;
+    height: 100vh;
+    background: #f5f5e5;
+    overflow-y: auto;
+}
+
+#sidebar-atas{
+    background-color: aqua;
+}
+.container1{
+    margin-bottom: 5px;
+}
+
+
+/* page responsive */
+
+
+/* Gaya untuk sidebar di layar besar */
+#sidebarMenu {
+    display: none;
+}
+
+/* Gaya untuk tampilan sidebar di layar kecil */
+@media (max-width: 768px) {
+    #sidebarMenu {
+        display: block;
+    }
+
+    .collapse.show {
+        display: block;
+    }
+
+    .sidebar {
+        position: relative;
+        top: 0;
+        height: 100%;
+        z-index: 1;
+        background: #fff;
+        display: block;
+    }
+
+    .list-group-flush {
+        width: 100%;
+    }
+
+    #detail {
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+    }
+}

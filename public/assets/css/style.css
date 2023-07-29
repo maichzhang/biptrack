@@ -11,7 +11,7 @@
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
-  color: #ffffff;
+  color: #111307;
 }
 
 a {
@@ -114,7 +114,7 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: #fff;
+  background: #ffffff;
   transition: all 0.5s;
   z-index: 997;
   height: 70px;
@@ -137,7 +137,7 @@ h6 {
 }
 
 #header .logo img {
-  max-height: 60px;
+  max-height: 75px;
 }
 
 .scrolled-offset {
@@ -164,6 +164,7 @@ h6 {
 
 .navbar li {
   position: relative;
+
 }
 
 .navbar a,
@@ -172,10 +173,11 @@ h6 {
   align-items: center;
   justify-content: space-between;
   padding: 10px 0 10px 30px;
-  font-size: 15px;
+  font-size: 20px;
   color: #222222;
   white-space: nowrap;
   transition: 0.3s;
+
 }
 
 .navbar a i,
@@ -189,24 +191,25 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #3781ac
+  color: #ffc107;
+  
 }
 
 .navbar .getstarted,
 .navbar .getstarted:focus {
-  color: #3781ac;
+  color: #000102;
   padding: 8px 25px;
   margin-left: 30px;
   border-radius: 4px;
-  border: 2px solid #3781ac;
+  border: 2px solid #ffc107;
   transition: 0.3s;
   font-size: 14px;
 }
 
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
-  background: #3781ac;
-  color: #fff;
+  background: #ffc107;
+  color: #000000;
 }
 
 .navbar .dropdown ul {
@@ -392,6 +395,27 @@ h6 {
 }
 
 
+/*--------------------------------------------------------------
+# Pilihan Section
+--------------------------------------------------------------*/
+#pilihan {
+padding-top: 70px;
+margin-bottom: 0px;
+text-align: center;
+font-family: serif;
+}
+
+.btn-pilih {
+  margin-top: 15px;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+
 
 
 
@@ -399,7 +423,7 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 10px 0;
+  padding: 0px 0;
 }
 
 .section-bg {
@@ -407,6 +431,7 @@ section {
 }
 
 .section-title {
+  margin-top: 70px;
   text-align: center;
   padding-bottom: 30px;
 }
@@ -418,6 +443,7 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
+  font-family: 'Arial', sans-serif;
 }
 
 .section-title h2::before {
@@ -448,10 +474,141 @@ section {
   color: #919191;
 }
 
+
+.dropdown {
+  margin-top: 30px;
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+
+.dropdown-toggle {
+  background-color: #ffc107;
+  color: #000000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px; 
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  min-width: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+.show {
+  display: block;
+}
+
+.col-divider {
+  border-right: 1px solid #ccc;
+}
+.carousel-inner {
+  max-height: 500px; /* Sesuaikan dengan tinggi maksimum slider */
+}
+
+.carousel-news-item {
+  display: none; /* Sembunyikan semua berita secara default */
+}
+
+.carousel-news-item.active {
+  display: block; /* Tampilkan berita yang aktif (sedang ditampilkan) */
+}
+
+
+
+.news-image {
+  position: relative;
+  overflow: hidden;
+  width: 70%;
+  max-width: 200px; /* Sesuaikan ukuran maksimum frame gambar */
+}
+
+.news-image img {
+  width: 70%;
+  height: auto;
+  display: block;
+}
+.news-content {
+  text-align: justify;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0px;
+  max-height: 200px; /* Tentukan tinggi maksimal untuk konten berita */
+  overflow-y: auto;
+}
+
+.news-text {
+   display: -webkit-box;
+  -webkit-line-clamp: 3; /* Menampilkan 3 baris teks */
+  -webkit-box-orient: vertical;
+   overflow: hidden;
+}
+
+
+.show-more .news-text {
+  -webkit-line-clamp: unset; /* Membuka batasan teks */
+}
+
+
+.read-more {
+  cursor: pointer;
+  color: #007bff;
+  display: block;
+  border: none;
+  border-radius: 100%;
+}
+
+/* Style untuk carousel indicator */
+.carousel-indicators {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.carousel-indicators li[data-bs-target] {
+  box-sizing: content-box;
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  text-indent: -999px;
+  border: none;
+  border-radius: 50%;
+  background-color: #868080; /* Warna indicator non aktif */
+}
+
+.carousel-indicators li.active {
+  background-color: #ffc107; /* Warna indicator aktif */
+}
+
 /*--------------------------------------------------------------
 # Featured Services
 --------------------------------------------------------------*/
-.featured-services {
+/* .featured-services {
   padding: 20px 0;
 }
 
@@ -490,12 +647,12 @@ section {
 .featured-services .description {
   line-height: 24px;
   font-size: 14px;
-}
+} */
 
 /*--------------------------------------------------------------
 # About Us
 --------------------------------------------------------------*/
-.about .content h3 {
+/* .about .content h3 {
   font-weight: 700;
   font-size: 28px;
 }
@@ -522,7 +679,7 @@ section {
 /*--------------------------------------------------------------
 # Why Us
 --------------------------------------------------------------*/
-.why-us {
+/* .why-us {
   padding: 0;
 }
 
@@ -562,12 +719,12 @@ section {
   .why-us .content-item {
     padding: 40px 0;
   }
-}
+} */
 
 /*--------------------------------------------------------------
 # Our Clients
 --------------------------------------------------------------*/
-.clients .swiper-slide img {
+/* .clients .swiper-slide img {
   opacity: 0.5;
   transition: 0.3s;
 }
@@ -591,12 +748,12 @@ section {
 
 .clients .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #3781ac
-}
+} */ */
 
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
-.services .icon-box {
+/* .services .icon-box {
   text-align: center;
   padding: 70px 20px 80px 20px;
   transition: all ease-in-out 0.3s;
@@ -729,7 +886,7 @@ section {
 /*--------------------------------------------------------------
 # Cta
 --------------------------------------------------------------*/
-.cta {
+/* .cta {
   background: #3781ac;
   padding: 80px 0;
 }
@@ -776,12 +933,12 @@ section {
     align-items: center;
     justify-content: flex-end;
   }
-}
+} */
 
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
-.portfolio .portfolio-item {
+/* .portfolio .portfolio-item {
   margin-bottom: 30px;
 }
 
@@ -899,12 +1056,12 @@ section {
 
 .portfolio .portfolio-wrap:hover .portfolio-info {
   opacity: 1;
-}
+} */
 
 /*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
-.portfolio-details {
+/* .portfolio-details {
   padding-top: 40px;
 }
 
@@ -954,7 +1111,7 @@ section {
 
 .portfolio-details .portfolio-description {
   padding-top: 30px;
-}
+} */
 
 .portfolio-details .portfolio-description h2 {
   font-size: 26px;
@@ -965,7 +1122,7 @@ section {
 .portfolio-details .portfolio-description p {
   padding: 0;
 }
-
+ */
 /*--------------------------------------------------------------
 # Team
 --------------------------------------------------------------*/
@@ -1019,11 +1176,11 @@ section {
   font-size: 18px;
   margin: 0 2px;
 }
-
+/* 
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
-.contact .info {
+/* .contact .info {
   border-top: 3px solid #3781ac;
   border-bottom: 3px solid #3781ac;
   padding: 30px;
@@ -1188,12 +1345,12 @@ section {
   100% {
     transform: rotate(360deg);
   }
-}
-
+}  */
+/* 
 /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
-.breadcrumbs {
+/* .breadcrumbs {
   padding: 15px 0;
   background: #fbfbfb;
   min-height: 40px;
@@ -1242,7 +1399,8 @@ section {
   .breadcrumbs ol li {
     display: inline-block;
   }
-}
+} */ 
+
 
 /*--------------------------------------------------------------
 # Footer
@@ -1252,7 +1410,7 @@ section {
   color: #fff;
   font-size: 14px;
   text-align: center;
-  padding: 30px 0;
+  padding: 10px 10px;
 }
 
 #footer h3 {

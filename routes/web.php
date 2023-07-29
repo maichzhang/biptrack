@@ -17,4 +17,5 @@ Route::get('/', function () {
 
 
 Route::get('/user', [userController::class, 'index'])->name('user');
+Route::get('/userBK', [userBKController::class, 'index'])->name('userBK');
 Route::get('/home', [homeController::class, 'index'])->name('home');

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>LACAK BIPOL</title>
+    <title>LACAK BUS KARYAWAN</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     
@@ -15,13 +15,14 @@
 </head>
 
 <body>
-
-    <div id="pesan">
+    
+    <div id="sidebar">
+        <section id="sidebar-atas">
         <a href="{{ route('home') }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Kembali</a>
         <div class="inner">
-            <a href="{{ route('user') }}"> <img src="{{ asset('images/logo.png') }}" alt="Logo bipol" class="logo"></a>
+            <a href="{{ route('userBK') }}"> <img src="{{ asset('images/logo.png') }}" alt="Logo bipol" class="logo"></a>
             <hr>
-         
+        </section>
             <h4 id="title">Periksa Jarak Bus Dari Lokasimu :</h4> 
             
             <div class="mt-20">
@@ -47,21 +48,28 @@
                                     {{-- <button onclick="myLocation()" class="list-group-item list-group-item-action py-2 ripple rounded "> 
                                       Lihat Jarak
                                     </button> --}}
-                                    <button onclick="myLocation()" class="list-group-item list-group-item-action py-2 ripple rounded text-center">
+                                    <button onclick="myLocation()" class="list-group-item list-group-item-action py-2               ripple rounded text-center">
                                         <img src="{{ asset('images/myloc.png') }}" alt="My Icon" class="myloc"> <!-- Ikon lokal -->
                                         Lihat Jarak
                                       </button>
+                                   
                                     <div id="errorMessage" class="text-danger" style="display:none;">
                                         <p>Data Sedang Diproses Harap Menunggu</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                       
                     </nav>
                 <!-- Sidebar -->
             </div>    
         </div>
+      
     </div>
+        
+    </div>
+   
+
 
     <div id="map"></div>
 
@@ -474,7 +482,7 @@ function updateMap(latitude, longitude) {
         position: markerPosition,
         map: map,
         icon: {
-        url: '{{ asset('images/bus.png') }}',
+        url: '{{ asset('images/buskaryawan.png') }}',
         scaledSize: new google.maps.Size(50, 50) // class CSS .icon-marker
   }
     });

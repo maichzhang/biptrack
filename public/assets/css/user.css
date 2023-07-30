@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#pesan {
+    float: left;
+    width: 300px;
+    height: 100vh;
+    background: #e6e6c5;
+    overflow-y: auto;
+}
+
+
+#map {
+    float: left;
+    width: calc(100% - 300px);
+    height: 100vh;
+}
+
+#title {
+    text-align: left;
+    margin: 10px 0;
+}
+
+.inner {
+    padding: 10px;
+}
+
+#detail {
+    text-align: center;
+    display: none;
+    margin-top: 15px;
+}
+
+#detail th, #detail td {
+    padding: 10px;
+    text-align: left;
+}
+
+.card-custom {
+	background-color: #fff;
+	padding: 10px 15px;
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+	border-radius: 8px;
+}
+
+#pesan-btn {
+    display: block;
+    margin: auto;
+}
+.logo {
+    width: 200px; /* Atur lebar gambar logo */
+    height: auto; /* Biarkan tinggi mengikuti proporsi asli gambar */
+    margin-top: 30px; /* Mengatur jarak 20 piksel dari atas */
+  margin-bottom: 15px; /* Mengatur jarak 10 piksel dari bawah */
+  margin-left: 25px; /* Mengatur jarak 30 piksel dari kiri */
+  margin-right: 60px; /* Mengatur jarak 40 piksel dari kanan */
+}
+
+/* CSS class untuk mengatur ukuran ikon marker bipol*/
+/* .icon-marker {
+    width: 32px; /* Ubah sesuai dengan ukuran yang diinginkan */
+    /* height: 32px; /* Ubah sesuai dengan ukuran yang diinginkan */
+  /* }  */
+
+.myloc{
+ width: 20px;
+
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+  }
+
+  /* ------------------------userbk(style) -----------------------------*/
+  #sidebar {
+    float: left;
+    width: 300px;
+    height: 100vh;
+    background: #f5f5e5;
+    overflow-y: auto;
+}
+
+#sidebar-atas{
+    background-color: aqua;
+}
+.container1{
+    margin-bottom: 5px;
+}
+
+
+/* page responsive */
+
+
+/* Gaya untuk sidebar di layar besar */
+#sidebarMenu {
+    display: none;
+}
+
+/* Gaya untuk tampilan sidebar di layar kecil */
+@media (max-width: 768px) {
+    #sidebarMenu {
+        display: block;
+    }
+
+    .collapse.show {
+        display: block;
+    }
+
+    .sidebar {
+        position: relative;
+        top: 0;
+        height: 100%;
+        z-index: 1;
+        background: #fff;
+        display: block;
+    }
+
+    .list-group-flush {
+        width: 100%;
+    }
+
+    #detail {
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+    }
+}

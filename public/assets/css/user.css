@@ -76,6 +76,49 @@ body {
    
   }
 
+  
+.dropdown {
+    margin-top: 30px;
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
+    
+  }
+  
+  
+  .dropdown-toggle {
+    background-color: #faee0c;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px; 
+    cursor: pointer;
+    font-size:small;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    min-width: 120px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ 
+  }
+  
+  .dropdown-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #f1f1f1;
+  }
+
   /* ------------------------userbk(style) -----------------------------*/
   #sidebar {
     float: left;
@@ -86,7 +129,7 @@ body {
 }
 
 #sidebar-atas{
-    background-color: aqua;
+    background-color: #ccff99;
 }
 .container1{
     margin-bottom: 5px;

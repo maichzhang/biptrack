@@ -18,7 +18,15 @@
     
     <div id="sidebar">
         <section id="sidebar-atas">
-        <a href="{{ route('home') }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Kembali</a>
+        <a href="{{ route('user view.landingpage.store') }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Kembali</a>
+        <div class="dropdown">
+            <button class="dropdown-toggle" onclick="toggleDropdown('dropdown-menu-1')">BIS (B 7014 EPA)</button>
+            <div class="dropdown-menu" id="dropdown-menu-1">
+              <a href="{{ route('userBK') }}">BIS (B 7014 EPA)</a>
+              <a href="{{ route('userBK2') }}">BIS (B 7003 EUA)</a>
+           
+            </div>
+          </div>
         <div class="inner">
             <a href="{{ route('userBK') }}"> <img src="{{ asset('images/logo.png') }}" alt="Logo bipol" class="logo"></a>
             <hr>
@@ -494,7 +502,7 @@ function updateMap(latitude, longitude) {
                 map: map
             });
     // map.panTo(markerPosition);
-    var tooltipContent = '<b>BIS POLITEKNIK</b>' + '<br>Latitude: ' + latitude + '<br>Longitude: ' + longitude +
+    var tooltipContent = '<b>BIS KARYAWAN</b>' + '<br>Latitude: ' + latitude + '<br>Longitude: ' + longitude +
                                  '<br><a href="javascript:void(0);" onclick="openInGoogleMaps(' + latitude + ',' + longitude + ');">Buka di Google Maps</a>';
 
     var infoWindow = new google.maps.InfoWindow({
@@ -582,7 +590,24 @@ function showRouteOnMap(startLat, startLon, endLat, endLon) {
 
 
 setInterval(fetchLatestData, 4000);
+//button dropdown bus poltek
+function toggleDropdown(menuId) {
+    var dropdownMenu = document.getElementById(menuId);
+    dropdownMenu.classList.toggle("show");
+}
 
+window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-toggle')) {
+        var dropdowns = document.getElementsByClassName("dropdown-menu");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+// samapai sini
 
     </script>
 </body>

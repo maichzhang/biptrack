@@ -17,7 +17,15 @@
 <body>
 
     <div id="pesan">
-        <a href="{{ route('home') }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Kembali</a>
+        <a href="{{ route('user view.landingpage.store') }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Kembali</a>
+        <div class="dropdown">
+            <button class="dropdown-toggle" onclick="toggleDropdown('dropdown-menu-1')">BIS (B 7006 EPA)</button>
+            <div class="dropdown-menu" id="dropdown-menu-1">
+              <a href="{{ route('user') }}">BIS (B 7006 EPA)</a>
+              <a href="{{ route('userbis2') }}">BIS (B 7005 EPA)</a>
+              <a href="{{ route('userbis3') }}">BIS (B 7013 EPA)</a>
+            </div>
+          </div>
         <div class="inner">
             <a href="{{ route('user') }}"> <img src="{{ asset('images/logo.png') }}" alt="Logo bipol" class="logo"></a>
             <hr>
@@ -57,6 +65,8 @@
                                 </div>
                             </div>
                         </div>
+                        
+                          
                     </nav>
                 <!-- Sidebar -->
             </div>    
@@ -576,6 +586,24 @@ function showRouteOnMap(startLat, startLon, endLat, endLon) {
 setInterval(fetchLatestData, 4000);
 
 
+//button dropdown bus poltek
+function toggleDropdown(menuId) {
+    var dropdownMenu = document.getElementById(menuId);
+    dropdownMenu.classList.toggle("show");
+}
+
+window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-toggle')) {
+        var dropdowns = document.getElementsByClassName("dropdown-menu");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+// samapai sini
     </script>
 </body>
 {{-- <a href="https://www.flaticon.com/free-icons/bus-stop" title="bus stop icons">Bus stop icons created by André Luiz Gollo - Flaticon</a> --}}

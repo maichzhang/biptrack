@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 // use location
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', function () {
-    return view('home');}); 
+    return view('auth.login');}); 
 
 
 Route::get('/user', [userController::class, 'index'])->name('user');
+Route::get('/userbis2', [userController::class, 'index2'])->name('userbis2');
+Route::get('/userbis3', [userController::class, 'index3'])->name('userbis3');
 Route::get('/userBK', [userBKController::class, 'index'])->name('userBK');
-Route::get('/home', [homeController::class, 'index'])->name('home');
+Route::get('/userBK2', [userBKController::class, 'index2'])->name('userBK2');
+
+
+Route::get('/beranda', [BerandaController::class, 'index1'])->name('user view.landingpage');
+Route::post('/beranda', [BerandaController::class, 'store'])->name('user view.landingpage.store');
+
+Auth::routes();
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');

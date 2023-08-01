@@ -46,7 +46,7 @@
     /* Media query for iPhone XR (max-width: 414px) */
     @media (max-width: 414px) {
       .logo img {
-        max-width: 80px;
+        max-width: 100px;
       }
 
       #navbar ul {
@@ -81,20 +81,7 @@
       }
 
       /* Adjust the size and spacing of the team members for smaller screens */
-      .team .member {
-        margin-bottom: 20px;
-        text-align: center;
-      }
-
-      .team .member img {
-        max-width: 120px;
-        margin-bottom: 10px;
-      }
-
-      .team .member h4 {
-        font-size: 18px;
-      }
-
+  
       /* Modify the button size for smaller screens */
       .getstarted {
         font-size: 16px;
@@ -119,8 +106,8 @@
   <!-- ======= Header ======= -->
   
   <header id="header" class="d-flex align-items-center">
-      <h1 class="logo me-auto"><a href="{{ route('home') }}"><img src="{{ asset('images/logo.png') }}" alt="Logo bipol">CEK BIPOL</a>  </h1>
-    <div class="container d-flex align-items-center">
+      <h1 class="logo me-auto"><a href="{{ route('user view.landingpage.store') }}"><img src="{{ asset('images/logo.png') }}" alt="Logo bipol"></a>CEK BIPOL</h1>
+  
      
     
       <!-- Uncomment below if you prefer to use an image logo -->
@@ -129,11 +116,10 @@
       <nav id="navbar" class="navbar">
         
         <ul>
-          <li><a class="nav-link scrollto active" href="{{ route('home') }}">Beranda</a></li>
+          <li><a class="nav-link scrollto active" href="{{ route('user view.landingpage.store') }}">Beranda</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          {{-- <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li> --}}
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          {{-- <li><a class="nav-link scrollto" href="#team">Team</a></li> --}}
+          <li><a class="nav-link scrollto" href="#forum">Forum</a></li>
           {{-- <li><a class="getstarted " href="{{ route('user') }}">Lacak Sekarang</a></li> --}}
           <li><a class="getstarted scrollto" href="#pilihan">Lacak Sekarang</a></li>
        
@@ -162,8 +148,8 @@
               <button class="dropdown-toggle" onclick="toggleDropdown('dropdown-menu-1')">BIS POLITEKNIK</button>
               <div class="dropdown-menu" id="dropdown-menu-1">
                 <a href="{{ route('user') }}">BIS (B 7006 EPA)</a>
-                <a href="#">BIS (B 7005 EPA)</a>
-                <a href="#">BIS (B 7013 EPA)</a>
+                <a href="{{ route('userbis2') }}">BIS (B 7005 EPA)</a>
+                <a href="{{ route('userbis3') }}">BIS (B 7013 EPA)</a>
               </div>
             </div>
             
@@ -171,13 +157,13 @@
               <button class="dropdown-toggle" onclick="toggleDropdown('dropdown-menu-2')">BIS KARYAWAN</button>
               <div class="dropdown-menu" id="dropdown-menu-2">
                 <a href="{{ route('userBK') }}">BIS (B 7014 EPA)</a>
-                <a href="#">BIS</a>
+                <a href="{{ route('userBK2') }}">BIS (B 7003 EUA)</a>
               </div>
             </div>
           </div>
         </div>
         
-        <div class="col-md-6">
+        <div class="col-md-5">
           <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -237,11 +223,9 @@
           </div>
         </div>
       </section>
-<hr>
-   
-    
+    </main><!-- End #main -->
 
-    <!-- ======= Team Section ======= -->
+    {{-- <!-- ======= Team Section ======= -->
     <section id="team" class="team section-bg">
       <div class="container">
         <div class="section-title">
@@ -249,14 +233,48 @@
           <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
-  </div>
-  </div>
+  </div> --}}
+  {{-- </div> --}}
          
 
-    </section><!-- End Team Section -->
-   
+    {{-- </section><!-- End Team Section --> --}}
 
-  </main><!-- End #main -->
+ 
+    <h2 class="text">TINGGALKAN PESAN KESANMU:</h2>
+    
+  <section id="forum">
+   
+  <div class="layout-comment">
+  <div class="section">
+    
+        <form action="{{ route('user view.landingpage.store') }}" method="post">
+            @csrf
+            <input type="text" name="nama" placeholder="masukkan namamu" required> <br>
+            <textarea name="konten" placeholder="tulis komentarmu disini..." rows="6" cols="60" required></textarea> <br>
+            <button type="submit">Tambah Komentar</button>
+        </form>
+        
+  </div>
+  <div class="section" >
+    <div class="section">
+        <!-- Tampilkan komentar -->
+        @php
+            $comments = $comments->sortByDesc('created_at');
+        @endphp
+        @foreach($comments as $comment)
+            <div class="col">
+                <strong>{{ $comment->nama }}</strong>
+                {{ $comment->konten }} <br>
+                <small>{{ $comment->created_at->diffForHumans() }}</small>
+            </div>
+        @endforeach
+    </div>
+  </div>
+  </section>
+ 
+  
+
+
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
